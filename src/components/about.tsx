@@ -47,7 +47,7 @@ const About = () => {
   });
 
   return (
-    <section id="about" className="isolate min-h-screen">
+    <section id="about" className="isolate ">
       <CustomLayout>
         <div className="max-w-6xl  mx-auto ">
           <h2 className="text-xl md:text-3xl font-bold  text-center title">

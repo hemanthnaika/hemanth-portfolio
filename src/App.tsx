@@ -5,6 +5,8 @@ import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import Hero from "./components/hero";
 import About from "./components/about";
+import Skills from "./components/Skills";
+
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
@@ -14,6 +16,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
 
       <div className="h-screen"></div>
       <div className="h-screen"></div>
