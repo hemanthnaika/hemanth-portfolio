@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import CustomLayout from "@/components/CustomLayout";
 import { navBar } from "@/constants";
 import gsap from "gsap";
