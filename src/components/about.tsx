@@ -63,9 +63,8 @@ const About = () => {
                 <span className="text-primary font-bold">
                   Software Developer
                 </span>{" "}
-                based in Mangalore , and I’ve completed my <strong>MCA</strong>.
-                I enjoy building clean, practical web and mobile applications
-                that solve real-world problems.
+                based in Mangalore India. I enjoy building clean, practical web
+                and mobile applications that solve real-world problems.
               </p>
 
               <p className="text-lg tracking-wider paragraph">
