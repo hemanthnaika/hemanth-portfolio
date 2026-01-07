@@ -1,7 +1,5 @@
-import React from "react";
-
 const App = () => {
-  return <div>Hemanth</div>;
+  return <div className="text-4xl underline">Hemanth</div>;
 };
 
 export default App;
