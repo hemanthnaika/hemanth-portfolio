@@ -1,3 +1,4 @@
+import { microDegree, shapeAi } from "@/assets";
 import {
   api,
   aws,
@@ -120,4 +121,45 @@ export const skills = [
   { title: "Figma", icon: figma, category: "Tools" },
   { title: "GitHub Actions", icon: gitAction, category: "Tools" },
   { title: "VS Code", icon: vscode, category: "Tools" },
+];
+
+export const experience = [
+  {
+    role: " Full Stack Developer Trainee",
+    company: " Shape AI",
+    logo: shapeAi,
+    responsibilities: [
+      "Built full-stack web applications",
+      "Developed REST APIs & database logic",
+      "Implemented CRUD & authentication",
+      "Used component-based architecture",
+    ],
+    techStack: ["React", "Node.js", "Express.js", "MongoDB"],
+    style: "absolute -top-24 left-0",
+  },
+  {
+    role: "Python Full Stack Developer Trainee",
+    company: "Micro Degree",
+    logo: microDegree,
+    responsibilities: [
+      "Developed full stack web applications",
+      "Built backend using Python & Django",
+      "Connected frontend with backend and database",
+      "Implemented MVC, CRUD, and authentication",
+    ],
+    techStack: ["Python", "Django", "SQLite"],
+    style: "absolute -bottom-40 left-1/2  -translate-x-1/2",
+  },
+  {
+    role: "DevOps & AWS Trainee",
+    company: "Micro Degree",
+    logo: microDegree,
+    responsibilities: [
+      "Learned AWS and DevOps fundamentals",
+      "Deployed applications on AWS EC2",
+      "Assisted with CI/CD and cloud security practices",
+    ],
+    techStack: ["AWS", "EC2", "Load Balancer", "Linux", "CI/CD"],
+    style: "absolute -top-28 right-0",
+  },
 ];

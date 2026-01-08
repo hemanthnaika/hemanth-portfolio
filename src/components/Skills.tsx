@@ -6,7 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 const Skills = () => {
   useGSAP(() => {
-    const split = new SplitText(".skill-title", {
+    const split = SplitText.create(".skill-title", {
       type: "chars",
     });
 
@@ -16,7 +16,6 @@ const Skills = () => {
         start: "top center",
         end: "center center",
         scrub: true,
-        markers: true,
       },
     });
 
@@ -33,7 +32,7 @@ const Skills = () => {
     });
   });
   return (
-    <section id="skills" className="mt-10">
+    <section id="skills" className="mt-20">
       <CustomLayout>
         <div className="max-w-6xl  mx-auto ">
           <h2 className="text-xl md:text-3xl font-bold  text-center title mb-5 skill-title">

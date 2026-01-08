@@ -75,7 +75,7 @@ const About = () => {
             </div>
             {/* RIGHT — IMAGE */}
             <div className="order-1 md:order-2 mb-5 md:flex md:justify-end img-container">
-              <CardContainer className="inter-var bg-red-400">
+              <CardContainer className="inter-var ">
                 <CardBody className="bg-black w-75 h-75">
                   <CardItem
                     translateZ="100"
