@@ -122,44 +122,32 @@ export const skills = [
   { title: "GitHub Actions", icon: gitAction, category: "Tools" },
   { title: "VS Code", icon: vscode, category: "Tools" },
 ];
-
 export const experience = [
   {
-    role: " Full Stack Developer Trainee",
-    company: " Shape AI",
+    role: "Full Stack Developer Trainee",
+    company: "Shape AI",
     logo: shapeAi,
-    responsibilities: [
-      "Built full-stack web applications",
-      "Developed REST APIs & database logic",
-      "Implemented CRUD & authentication",
-      "Used component-based architecture",
-    ],
+    responsibilities:
+      "Built full-stack web applications, developed REST APIs and database logic, and implemented CRUD operations and authentication using a component-based architecture.",
     techStack: ["React", "Node.js", "Express.js", "MongoDB"],
-    style: "absolute -top-24 left-0",
+    style: "absolute -top-[76px] left-0",
   },
   {
     role: "Python Full Stack Developer Trainee",
     company: "Micro Degree",
     logo: microDegree,
-    responsibilities: [
-      "Developed full stack web applications",
-      "Built backend using Python & Django",
-      "Connected frontend with backend and database",
-      "Implemented MVC, CRUD, and authentication",
-    ],
+    responsibilities:
+      "Developed full-stack web applications using Python and Django with database integration and authentication.",
     techStack: ["Python", "Django", "SQLite"],
-    style: "absolute -bottom-40 left-1/2  -translate-x-1/2",
+    style: "absolute -bottom-16 left-1/2 -translate-x-1/2",
   },
   {
     role: "DevOps & AWS Trainee",
     company: "Micro Degree",
     logo: microDegree,
-    responsibilities: [
-      "Learned AWS and DevOps fundamentals",
-      "Deployed applications on AWS EC2",
-      "Assisted with CI/CD and cloud security practices",
-    ],
+    responsibilities:
+      "Learned AWS and DevOps fundamentals and deployed applications on AWS EC2 with basic CI/CD and security practices.",
     techStack: ["AWS", "EC2", "Load Balancer", "Linux", "CI/CD"],
-    style: "absolute -top-28 right-0",
+    style: "absolute -top-[70px] right-0",
   },
 ];

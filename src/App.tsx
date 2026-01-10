@@ -10,6 +10,10 @@ import About from "./components/About";
 
 import Experience from "./components/Experience";
 
+import Projects from "./components/Projects";
+import Footer from "./layout/footer";
+import Certificate from "./components/certificate";
+
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
 const App = () => {
@@ -20,10 +24,9 @@ const App = () => {
       <About />
       <Skills />
       <Experience />
-
-      <div className="h-screen bottom-"></div>
-      <div className="h-screen"></div>
-      <div className="h-screen"></div>
+      <Projects />
+      <Certificate />
+      <Footer />
     </main>
   );
 };

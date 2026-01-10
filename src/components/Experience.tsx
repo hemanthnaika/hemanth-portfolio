@@ -18,7 +18,7 @@ const Card = ({
   role: string;
   company: string;
   logo: string;
-  responsibilities: string[];
+  responsibilities: string;
   techStack: string[];
   isTop?: boolean;
   mobile: boolean;
@@ -50,11 +50,7 @@ const Card = ({
       <div className="h-px w-full bg-white/10 my-3" />
 
       {/* Responsibilities */}
-      <ul className="text-sm text-white/80 space-y-2 list-disc list-inside">
-        {responsibilities.map((responsibility, index) => (
-          <li key={index}>{responsibility}</li>
-        ))}
-      </ul>
+      <p className="text-sm text-white/80">{responsibilities}</p>
 
       {/* Tech Stack */}
       <div className="mt-4 flex flex-wrap gap-2">
@@ -89,7 +85,6 @@ const Experience = () => {
         trigger: "#experience",
         start: isMobileOrTablet ? "top 80%" : "center center",
         end: isMobileOrTablet ? "bottom bottom" : "bottom center",
-        markers: true,
         pin: !isMobileOrTablet,
         scrub: true,
       },
@@ -123,7 +118,7 @@ const Experience = () => {
     });
   });
   return (
-    <section className="mt-20 md:mt-5" id="experience">
+    <section className="mt-20 md:mt-5 " id="experience">
       <CustomLayout>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-xl md:text-3xl font-bold  text-center title mb-5 experience-title ">
