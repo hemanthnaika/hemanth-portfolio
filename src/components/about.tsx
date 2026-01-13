@@ -5,12 +5,9 @@ import { Brain, Rocket, Users } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import Title from "./Title";
 const About = () => {
   useGSAP(() => {
-    const split = new SplitText(".title", {
-      type: "chars",
-    });
-
     const paragraph = new SplitText(".paragraph", {
       type: "lines",
     });
@@ -18,16 +15,9 @@ const About = () => {
       scrollTrigger: {
         trigger: "#about",
         start: "top center",
-        end: "center-=70 center",
+        end: "bottom 95%",
         scrub: true,
       },
-    });
-
-    tl.from(split.chars, {
-      y: 100,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.05,
     });
 
     tl.from(paragraph.lines, {
@@ -50,20 +40,23 @@ const About = () => {
     <section id="about" className="isolate ">
       <CustomLayout>
         <div className="max-w-6xl  mx-auto ">
-          <h2 className="text-xl md:text-3xl font-bold  text-center title">
-            About <span className="text-primary">Me</span>
-          </h2>
-
+          <Title
+            title="About"
+            subtitle="Me"
+            trigger="#about"
+            start="top center"
+            end="bottom bottom"
+          />
           {/* Top Grid */}
           <div className="grid md:grid-cols-2 gap-5">
             {/* LEFT — TEXT */}
             <div className="space-y-6 order-2 md:order-1 flex flex-col justify-center ">
-              <p className="text-lg justify-center tracking-wider paragraph">
+              <p className="text-lg justify-center tracking-wider paragraph ">
                 I’m a{" "}
                 <span className="text-primary font-bold">
-                  Software Developer
+              Full Stack Developer
                 </span>{" "}
-                based in Mangalore India. I enjoy building clean, practical web
+                based in Mangalore, India. I enjoy building clean, practical web
                 and mobile applications that solve real-world problems.
               </p>
 

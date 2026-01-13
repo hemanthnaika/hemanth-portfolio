@@ -1,4 +1,13 @@
-import { microDegree, shapeAi } from "@/assets";
+import {
+  aws_dev,
+  fullStack,
+  microDegree,
+  omega,
+  pinnacle,
+  pythonCer,
+  shapeAi,
+  sygma,
+} from "@/assets";
 import {
   api,
   aws,
@@ -55,12 +64,12 @@ export const navBar = [
   },
   {
     title: "Projects",
-    link: "/",
+    link: "#projects",
     icons: FolderKanban,
   },
   {
     title: "Contact",
-    link: "/",
+    link: "#contact",
     icons: Contact,
   },
 ];
@@ -150,4 +159,13 @@ export const experience = [
     techStack: ["AWS", "EC2", "Load Balancer", "Linux", "CI/CD"],
     style: "absolute -top-[70px] right-0",
   },
+];
+
+export const certificates = [
+  { id: 1, img: pythonCer },
+  { id: 2, img: fullStack },
+  { id: 3, img: sygma },
+  { id: 4, img: pinnacle },
+  { id: 5, img: omega },
+  { id: 6, img: aws_dev },
 ];

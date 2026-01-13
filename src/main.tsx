@@ -1,10 +1,28 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import AllProjects from "./components/AllProjects";
+import { StrictMode } from "react";
+import { Toaster } from "react-hot-toast";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/projects",
+    element: <AllProjects />,
+  },
+]);
+
+const root = document.getElementById("root");
+
+ReactDOM.createRoot(root!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <Toaster position="top-center" reverseOrder={false} />
+    <RouterProvider router={router} />
+  </StrictMode>
+);

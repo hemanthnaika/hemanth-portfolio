@@ -4,7 +4,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import { SplitText } from "gsap/SplitText";
+
+import Title from "./Title";
 
 const Card = ({
   role,
@@ -76,10 +77,6 @@ const Experience = () => {
   const cardElement = isMobileOrTablet ? mobileCardRef : desktopCardRef;
 
   useGSAP(() => {
-    const split = SplitText.create(".experience-title", {
-      type: "chars",
-    });
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#experience",
@@ -90,12 +87,6 @@ const Experience = () => {
       },
     });
 
-    tl.from(split.chars, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.05,
-    });
     tl.from(cardElement.current[0], {
       y: 100,
       opacity: 0,
@@ -121,9 +112,13 @@ const Experience = () => {
     <section className="mt-20 md:mt-5 " id="experience">
       <CustomLayout>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl md:text-3xl font-bold  text-center title mb-5 experience-title ">
-            My <span className="text-primary">Journey</span>
-          </h2>
+          <Title
+            title="My"
+            subtitle="Journey"
+            trigger="#experience"
+            start={isMobileOrTablet ? "top 80%" : "center center"}
+            end={isMobileOrTablet ? "bottom bottom" : "bottom center"}
+          />
           <div className="h-96 relative mt-28 hidden md:block ">
             <div className="absolute h-0.5 bg-white/10 w-9/12 left-1/2 -translate-x-1/2 top-1/2 ">
               <div className="bg-primary h-full w-full" ref={progress} />

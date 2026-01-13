@@ -53,3 +53,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--color-border) var(--color-background);
 }
+
+html{
+  scroll-behavior: smooth;
+}

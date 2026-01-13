@@ -38,6 +38,7 @@ import firebase from "./Firebase.png";
 import aws from "./aws.png";
 import gitAction from "./gitActions.svg";
 import vscode from "./vscode.png";
+import contact from "./contact.png"
 
 export {
   html,
@@ -74,4 +75,5 @@ export {
   aws,
   gitAction,
   vscode,
+  contact
 };

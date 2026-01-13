@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+import { resume } from "@/assets";
 
 const Hero = () => {
   useGSAP(() => {
@@ -84,7 +85,7 @@ const Hero = () => {
               </Button>
             </a>
 
-            <a href="/resume.pdf" download>
+            <a href={resume} download>
               <Button
                 size="lg"
                 variant="ghost"

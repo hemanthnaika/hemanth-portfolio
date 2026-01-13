@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 import { Button } from "./ui/button";
+import Title from "./Title";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -16,10 +17,6 @@ const Projects = () => {
 
   useGSAP(
     () => {
-      const split = new SplitText(".project-title", {
-        type: "chars",
-      });
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -28,38 +25,17 @@ const Projects = () => {
           scrub: 1,
         },
       });
-
-      tl.from(split.chars, {
+      tl.from(".project-1", {
         y: 80,
         opacity: 0,
-        stagger: 0.05,
-        ease: "power4.out",
-      })
-        .from(
-          ".project-1",
-          {
-            y: 80,
-            opacity: 0,
-            scale: 0.95,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.3"
-        )
-        .from(
-          ".side-project",
-          {
-            y: 60,
-            opacity: 0,
-            stagger: 0.2,
-            ease: "power3.out",
-          },
-          "-=0.4"
-        );
-
-      return () => {
-        split.revert();
-      };
+        scale: 0.95,
+        ease: "power3.out",
+      }).from(".side-project", {
+        y: 60,
+        opacity: 0,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
     },
     { scope: sectionRef }
   );
@@ -67,11 +43,15 @@ const Projects = () => {
   return (
     <section id="projects" className="mt-24" ref={sectionRef}>
       <CustomLayout>
-        <h2 className="project-title text-2xl md:text-4xl font-bold text-center mb-10">
-          My <span className="text-primary">Projects</span>
-        </h2>
+        <Title
+          title="My"
+          subtitle="Projects"
+          trigger="#projects"
+          start="top 80%"
+          end="bottom bottom"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {/* Featured Project */}
           <div className="project-1 md:col-span-2 rounded-xl overflow-hidden">
             <img
@@ -153,7 +133,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="text-center mt-5">
-          <a href="">
+          <a href="/projects">
             <Button>View more</Button>
           </a>
         </div>
