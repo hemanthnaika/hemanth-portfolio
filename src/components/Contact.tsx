@@ -11,6 +11,7 @@ import Title from "./Title";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+
 const InputBox = ({
   label,
   placeholder,
@@ -60,7 +61,7 @@ const Contact = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#contact",
-        start: "top center",
+        start: isMobileOrTablet ? "top 90%" : "top center",
         end: isMobileOrTablet ? "bottom bottom+=20%" : "bottom 94%",
         scrub: 1,
       },
@@ -116,7 +117,7 @@ const Contact = () => {
             title="Get in"
             subtitle="Touch"
             trigger="#contact"
-            start="top center"
+            start={isMobileOrTablet ? "top 90%" : "top center"}
             end={isMobileOrTablet ? "bottom bottom+=20%" : "bottom 94%"}
           />
           <p className="text-center mt-3 contact-desc">

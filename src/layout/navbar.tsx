@@ -69,7 +69,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="pt-5 fixed top-0 left-0 w-full z-50">
+    <header className="pt-5 fixed top-0 left-1/2 -translate-x-1/2 w-full z-50">
       <CustomLayout>
         <nav className="flex items-center justify-center">
           <div

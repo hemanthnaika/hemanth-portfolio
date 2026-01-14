@@ -5,8 +5,10 @@ import Title from "./Title";
 import { certificates } from "@/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ResponseCheck } from "./mobileCheck";
 
 const Certificate = () => {
+  const mobile = ResponseCheck();
   const [preview, setPreview] = useState<string | null>(null);
 
   useGSAP(() => {
@@ -17,9 +19,9 @@ const Certificate = () => {
       stagger: 0.5,
       scrollTrigger: {
         trigger: "#certificates",
-        start: "top center",
-        end: "bottom 95%",
-   
+        start: mobile ? "top 90%" : "top center",
+        end: mobile ? "+=500" : "bottom 95%",
+
         scrub: 1,
       },
     });

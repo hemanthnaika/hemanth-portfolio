@@ -6,7 +6,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import Title from "./Title";
+import { ResponseCheck } from "./mobileCheck";
 const About = () => {
+  const mobile = ResponseCheck();
   useGSAP(() => {
     const paragraph = new SplitText(".paragraph", {
       type: "lines",
@@ -14,8 +16,8 @@ const About = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
-        start: "top center",
-        end: "bottom 95%",
+        start: mobile ? "top 80%" : "top center",
+        end: mobile ? "+=900" : "bottom 95%",
         scrub: true,
       },
     });
@@ -44,8 +46,8 @@ const About = () => {
             title="About"
             subtitle="Me"
             trigger="#about"
-            start="top center"
-            end="bottom bottom"
+            start={mobile ? "top 80%" : "top center"}
+            end={mobile ? "+=900" : "bottom 95%"}
           />
           {/* Top Grid */}
           <div className="grid md:grid-cols-2 gap-5">
@@ -54,7 +56,7 @@ const About = () => {
               <p className="text-lg justify-center tracking-wider paragraph ">
                 I’m a{" "}
                 <span className="text-primary font-bold">
-              Full Stack Developer
+                  Full Stack Developer
                 </span>{" "}
                 based in Mangalore, India. I enjoy building clean, practical web
                 and mobile applications that solve real-world problems.

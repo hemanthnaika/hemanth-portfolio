@@ -22,7 +22,7 @@ const root = document.getElementById("root");
 
 ReactDOM.createRoot(root!).render(
   <StrictMode>
-    <Toaster position="top-center" reverseOrder={false} />
+    <Toaster position="bottom-center" reverseOrder={false} />
     <RouterProvider router={router} />
   </StrictMode>
 );

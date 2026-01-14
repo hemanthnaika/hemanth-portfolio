@@ -7,7 +7,10 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Title from "./Title";
+import { ResponseCheck } from "./mobileCheck";
 const Projects = () => {
+  const mobile = ResponseCheck();
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const infoRef = useRef<HTMLDivElement[]>([]);
@@ -35,10 +38,11 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top top",
+        start: mobile ? "top 2%" : "top top",
         end: `+=${projects.length * 100}%`,
         scrub: 1,
         pin: true,
+
         anticipatePin: 1,
         snap: {
           snapTo: 1 / (projects.length - 1),
@@ -82,7 +86,7 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="h-screen w-full p-5 relative transition-colors duration-500 mt-28"
+      className="h-screen w-full p-5 relative transition-colors duration-500 mt-5 md:mt-28"
     >
       {projects.map((project, index) => (
         <div className="absolute inset-0 w-full h-full mt-5">

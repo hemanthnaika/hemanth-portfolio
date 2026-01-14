@@ -36,7 +36,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="w-full h-full flex items-center justify-center mt-16 md:mt-5">
+      <div className="w-full h-full flex items-center justify-center mt-10 md:mt-5">
         {/* Background blobs */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/3 left-1/4 h-72 w-72 bg-primary/30 rounded-full blur-3xl" />

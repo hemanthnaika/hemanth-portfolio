@@ -4,7 +4,10 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Title from "./Title";
+import { ResponseCheck } from "./mobileCheck";
 const Skills = () => {
+  const mobile = ResponseCheck();
+
   useGSAP(() => {
     gsap.from(".skill-item", {
       y: 100,
@@ -13,7 +16,8 @@ const Skills = () => {
       scrollTrigger: {
         trigger: "#skills",
         start: "top center",
-        end: "center center",
+        end: mobile ? "+=200" : "center center",
+
         scrub: true,
       },
     });
