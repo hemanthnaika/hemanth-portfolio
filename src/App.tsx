@@ -4,16 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 
-import Skills from "./components/Skills";
-import Hero from "./components/Hero";
-import About from "./components/About";
-
-import Experience from "./components/Experience";
-
-import Projects from "./components/Projects";
-import Footer from "./layout/footer";
-
-import Contact from "./components/Contact";
 
 import "lenis/dist/lenis.css";
 import { ReactLenis, type LenisRef } from "lenis/react";
@@ -21,6 +11,13 @@ import { useEffect, useRef, useState } from "react";
 import Certificate from "./components/Certificate";
 import Loader from "./components/Loader";
 import { Button } from "./components/ui/button";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./layout/footer";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
