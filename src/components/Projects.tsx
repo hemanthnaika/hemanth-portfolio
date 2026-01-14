@@ -7,9 +7,9 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Title from "./Title";
-import { ResponseCheck } from "./mobileCheck";
+
 const Projects = () => {
-  const mobile = ResponseCheck();
+  
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -38,7 +38,7 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: mobile ? "top 2%" : "top top",
+        start: "top top",
         end: `+=${projects.length * 100}%`,
         scrub: 1,
         pin: true,

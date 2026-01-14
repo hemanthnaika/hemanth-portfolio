@@ -27,7 +27,7 @@ const Certificate = () => {
     });
   });
   return (
-    <section id="certificates" className="my-24">
+    <section id="certificates" className="my-10">
       <CustomLayout>
         <Title
           title="Awards &"
