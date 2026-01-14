@@ -20,6 +20,7 @@ import { ReactLenis, type LenisRef } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
 import Certificate from "./components/Certificate";
 import Loader from "./components/Loader";
+import { Button } from "./components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
@@ -55,6 +56,9 @@ const App = () => {
           <Skills />
           <Experience />
           <Projects />
+          <a href="/projects" className="flex mt-10 items-center justify-center">
+            <Button>View more</Button>
+          </a>
           <Certificate />
           <Contact />
           <Footer />
