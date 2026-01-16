@@ -9,8 +9,6 @@ import gsap from "gsap";
 import Title from "./Title";
 
 const Projects = () => {
-  
-
   const sectionRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const infoRef = useRef<HTMLDivElement[]>([]);
@@ -20,29 +18,49 @@ const Projects = () => {
     const infos = infoRef.current;
     if (!images.length) return;
 
-    // initial state
+    // initial background
     gsap.set(sectionRef.current, {
       backgroundColor: projects[0].bg,
     });
 
+    // 🔴 IMPORTANT FIX — disable interactions for all slides
     gsap.set(images, {
       scale: 0.4,
       opacity: 0,
       transformOrigin: "center center",
+      pointerEvents: "none",
+      zIndex: 0,
     });
-    gsap.set(infos, { opacity: 0, y: 50 });
 
-    gsap.set(images[0], { scale: 1, opacity: 1 });
-    gsap.set(infos[0], { opacity: 1, y: 0 });
+    gsap.set(infos, {
+      opacity: 0,
+      y: 50,
+      pointerEvents: "none",
+      zIndex: 0,
+    });
+
+    // ✅ FIX FIRST SLIDE (this was missing)
+    gsap.set(images[0], {
+      scale: 1,
+      opacity: 1,
+      pointerEvents: "auto",
+      zIndex: 30,
+    });
+
+    gsap.set(infos[0], {
+      opacity: 1,
+      y: 0,
+      pointerEvents: "auto",
+      zIndex: 30,
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
-        end: `+=${projects.length * 100}%`,
+        end: `+=${projects.length + 1 * 100}%`,
         scrub: 1,
         pin: true,
-
         anticipatePin: 1,
         snap: {
           snapTo: 1 / (projects.length - 1),
@@ -55,11 +73,27 @@ const Projects = () => {
     images.forEach((_, index) => {
       if (index === 0) return;
 
-      // previous image zoom out & fade
-      tl.to(images[index - 1], { scale: 1.2, opacity: 0, duration: 1 });
-      tl.to(infos[index - 1], { opacity: 0, y: -50 }, "<");
+      // previous image zoom out & disable interaction
+      tl.to(images[index - 1], {
+        scale: 1.2,
+        opacity: 0,
+        pointerEvents: "none",
+        zIndex: 0,
+        duration: 1,
+      });
 
-      // current image zoom in
+      tl.to(
+        infos[index - 1],
+        {
+          opacity: 0,
+          y: -50,
+          pointerEvents: "none",
+          zIndex: 0,
+        },
+        "<"
+      );
+
+      // current image zoom in & enable interaction
       tl.to(
         sectionRef.current,
         {
@@ -68,20 +102,35 @@ const Projects = () => {
         },
         "<"
       );
+
       tl.fromTo(
         images[index],
-        { scale: 0.4, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1 },
+        { scale: 0.4, opacity: 0, pointerEvents: "none" },
+        {
+          scale: 1,
+          opacity: 1,
+          pointerEvents: "auto",
+          zIndex: 30,
+          duration: 1,
+        },
         "<"
       );
+
       tl.fromTo(
         infos[index],
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1 },
+        { opacity: 0, y: 50, pointerEvents: "none" },
+        {
+          opacity: 1,
+          y: 0,
+          pointerEvents: "auto",
+          zIndex: 30,
+          duration: 1,
+        },
         "<"
       );
     });
   }, []);
+
   return (
     <section
       ref={sectionRef}
@@ -89,7 +138,10 @@ const Projects = () => {
       className="h-screen w-full p-5 relative transition-colors duration-500 mt-5 md:mt-28"
     >
       {projects.slice(0, 3).map((project, index) => (
-        <div className="absolute inset-0 w-full h-full mt-5">
+        <div
+          key={index}
+          className="absolute inset-0 w-full h-full mt-5 pointer-events-none"
+        >
           <Title
             title="My"
             subtitle="Projects"
@@ -97,6 +149,7 @@ const Projects = () => {
             start="top bottom"
             end="top 10%"
           />
+
           <CustomLayout>
             <div className="grid grid-cols-1 md:grid-cols-2 place-items-center md:min-h-[80vh] md:gap-5">
               <img
@@ -118,16 +171,17 @@ const Projects = () => {
                   {project.title}
                 </h2>
                 <p>{project.description}</p>
+
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tag, index) => (
-                    <Badge key={index} className="flex items-center gap-1">
+                  {project.tech.map((tag, i) => (
+                    <Badge key={i} className="flex items-center gap-1">
                       <img src={tag.icon} alt={tag.title} className="w-5 h-5" />
                       <span>{tag.title}</span>
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-4 ">
+                <div className="flex gap-4">
                   <a
                     href={project.github}
                     target="_blank"

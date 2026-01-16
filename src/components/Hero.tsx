@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Download, FolderKanban, Github, Linkedin, Mail } from "lucide-react";
 import Particles from "./Particles";
 import { Button } from "./ui/button";
 import { useGSAP } from "@gsap/react";
@@ -79,9 +79,9 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <a href="#projects" className="cursor-pointer">
+            <a href="#projects" className="cursor-progress">
               <Button size="lg" className="rounded-full px-8 ">
-                Contact Me <Phone />
+                View Projects <FolderKanban />
               </Button>
             </a>
 

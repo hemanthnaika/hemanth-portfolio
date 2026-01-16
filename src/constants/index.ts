@@ -213,7 +213,7 @@ export const projects = [
     img: oneStop,
     title: "One Stop Banking",
     github: "https://github.com/hemanthnaika/OneStopBank",
-    demo: "",
+    demo: "https://onestopbank.onrender.com",
     description:
       "One Stop is a complete banking solution that allows users to manage accounts, transfer funds, and pay bills securely. The platform emphasizes a user-friendly interface with fast and reliable performance. Includes an Admin Panel to monitor transactions, manage users, and ensure smooth banking operations.",
     bg: "rgba(37,99,235,0.5)",
@@ -222,32 +222,10 @@ export const projects = [
       { icon: python, title: "Python" },
       { icon: postgreSQL, title: "PostgreSQL" },
     ],
-    admin: {
-      username: "admin@onestop.com",
-      password: "BankAdmin2026",
-      description:
-        "Admin dashboard to oversee all banking operations and user accounts.",
-    },
   },
 
   {
     id: 4,
-    img: smartFarming,
-    title: "Smart Farming",
-    github: "https://github.com/hemanthnaika/Smart-Farming",
-    description:
-      "Smart Farming is a modern agriculture platform that empowers farmers with smart technology.Farmers can sell crops directly, connect with buyers.It also features AI-powered crop disease detection for quick and reliable plant health insights.",
-
-    tech: [
-      { icon: react, title: "React" },
-      { icon: tailwindcss, title: "Tailwind CSS" },
-      { icon: flask, title: "Flask" },
-      { icon: python, title: "Python" },
-      { icon: mongoDB, title: "MongoDB" },
-    ],
-  },
-  {
-    id: 5,
     img: bookStore,
     title: "Bookstore",
     github:
@@ -263,6 +241,22 @@ export const projects = [
       { icon: tailwindcss, title: "Tailwind CSS" },
       { icon: postgreSQL, title: "PostgreSQL" },
       { icon: prisma, title: "Prisma " },
+    ],
+  },
+  {
+    id: 5,
+    img: smartFarming,
+    title: "Smart Farming",
+    github: "https://github.com/hemanthnaika/Smart-Farming",
+    description:
+      "Smart Farming is a modern agriculture platform that empowers farmers with smart technology.Farmers can sell crops directly, connect with buyers.It also features AI-powered crop disease detection for quick and reliable plant health insights.",
+
+    tech: [
+      { icon: react, title: "React" },
+      { icon: tailwindcss, title: "Tailwind CSS" },
+      { icon: flask, title: "Flask" },
+      { icon: python, title: "Python" },
+      { icon: mongoDB, title: "MongoDB" },
     ],
   },
   {
