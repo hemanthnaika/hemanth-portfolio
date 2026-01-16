@@ -3,7 +3,7 @@ import shapeAi from "./shapeAi.jpg";
 import microDegree from "./microDegree.png";
 
 import skillConnectLap from "./skillConnect.png";
-import book from "./book.png";
+
 import pythonCer from "./PythonCer.png";
 import fullStack from "./fullStack.jpg";
 
@@ -16,16 +16,17 @@ import resume from "./ResumeHemanth.pdf";
 
 import clickCart from "./ClickCart.png";
 import oneStop from "./oneStop.png";
+import smartFarming from "./smartFarming.png";
+import bookStore from "./bookStore.png";
+import PGMonitoring from "./PGMonitoring.png";
 
 export {
   about,
   shapeAi,
   microDegree,
   skillConnectLap,
-  book,
   pythonCer,
   fullStack,
-
   pinnacle,
   sygma,
   omega,
@@ -33,4 +34,7 @@ export {
   resume,
   clickCart,
   oneStop,
+  smartFarming,
+  bookStore,
+  PGMonitoring,
 };

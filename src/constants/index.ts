@@ -1,14 +1,17 @@
 import {
   aws_dev,
+  bookStore,
   clickCart,
   fullStack,
   microDegree,
   omega,
   oneStop,
+  PGMonitoring,
   pinnacle,
   pythonCer,
   shapeAi,
   skillConnectLap,
+  smartFarming,
   sygma,
 } from "@/assets";
 import {
@@ -178,52 +181,42 @@ export const projects = [
     id: 1,
     img: skillConnectLap,
     title: "Skill Connect",
-    github: "https://github.com/PrashantChaudhari/SkillConnect",
-    demo: "https://skill-connect.vercel.app/",
+    github: "https://github.com/hemanthnaika/skill-connect",
+    demo: "https://skill-connect-web.vercel.app/",
     description:
       "SkillConnect is a modern platform that connects learners and instructors. Users can share their skills, join live workshops, and participate in real-time video sessions. The platform includes a fully-featured Admin Panel for managing users, workshops, and content seamlessly.",
-    bg: "rgba(15,43,76,0.2)",
+    bg: "rgba(15,43,76,0.5)",
     tech: [
       { icon: nextJs, title: "Next.js" },
       { icon: postgreSQL, title: "PostgreSQL" },
       { icon: drizzleOrm, title: "Drizzle ORM" },
       { icon: tailwindcss, title: "Tailwind CSS" },
     ],
-    admin: {
-      username: "admin@skillconnect.com",
-      password: "Admin123!",
-      description: "Full admin access to manage workshops, users, and content.",
-    },
   },
   {
     id: 2,
     img: clickCart,
     title: "Click Cart E-commerce",
-    github: "https://github.com/PrashantChaudhari/ClickCart",
-    demo: "https://click-cart.vercel.app/",
+    github: "https://github.com/hemanthnaika/ClickCart",
+    demo: "https://click-cart-shop.vercel.app/",
     description:
       "Click Cart is an intuitive e-commerce platform where users can browse products, manage carts, and place orders efficiently. Includes a secure admin dashboard to manage products, categories, orders, and invoices. Designed with performance and usability in mind for both customers and administrators.",
-    bg: "rgba(54,44,157,0.2)",
+    bg: "rgba(54,44,157,0.5)",
     tech: [
       { icon: react, title: "React.js" },
       { icon: node, title: "Node.js" },
       { icon: mongoDB, title: "MongoDB" },
     ],
-    admin: {
-      username: "admin@clickcart.com",
-      password: "Admin@123",
-      description: "Admin panel for managing products, orders, and users.",
-    },
   },
   {
     id: 3,
     img: oneStop,
     title: "One Stop Banking",
-    github: "https://github.com/PrashantChaudhari/OneStop",
-    demo: "https://one-stop-banking.vercel.app/",
+    github: "https://github.com/hemanthnaika/OneStopBank",
+    demo: "",
     description:
       "One Stop is a complete banking solution that allows users to manage accounts, transfer funds, and pay bills securely. The platform emphasizes a user-friendly interface with fast and reliable performance. Includes an Admin Panel to monitor transactions, manage users, and ensure smooth banking operations.",
-    bg: "rgba(37,99,235,0.2)",
+    bg: "rgba(37,99,235,0.5)",
     tech: [
       { icon: django, title: "Django" },
       { icon: python, title: "Python" },
@@ -235,5 +228,55 @@ export const projects = [
       description:
         "Admin dashboard to oversee all banking operations and user accounts.",
     },
+  },
+
+  {
+    id: 4,
+    img: smartFarming,
+    title: "Smart Farming",
+    github: "https://github.com/hemanthnaika/Smart-Farming",
+    description:
+      "Smart Farming is a modern agriculture platform that empowers farmers with smart technology.Farmers can sell crops directly, connect with buyers.It also features AI-powered crop disease detection for quick and reliable plant health insights.",
+
+    tech: [
+      { icon: react, title: "React" },
+      { icon: tailwindcss, title: "Tailwind CSS" },
+      { icon: flask, title: "Flask" },
+      { icon: python, title: "Python" },
+      { icon: mongoDB, title: "MongoDB" },
+    ],
+  },
+  {
+    id: 5,
+    img: bookStore,
+    title: "Bookstore",
+    github:
+      "https://github.com/hemanthnaika/online-bookstore-inventory-management",
+    demo: "https://online-bookstore-client.vercel.app/",
+    demoAdmin:
+      "https://online-bookstore-inventory-manageme-admin.vercel.app/login",
+    description:
+      "Bookstore is an online platform where users can browse, view details, and purchase books easily.It includes an admin panel to add and delete books, manage users, and view sales analytics.",
+
+    tech: [
+      { icon: react, title: "React" },
+      { icon: tailwindcss, title: "Tailwind CSS" },
+      { icon: postgreSQL, title: "PostgreSQL" },
+      { icon: prisma, title: "Prisma " },
+    ],
+  },
+  {
+    id: 6,
+    img: PGMonitoring,
+    title: "PG Monitoring",
+    github: "https://github.com/hemanthnaika/PG-Student-Monitoring-",
+    description:
+      "PG-Student-Monitoring is a system to track college students staying in paying guest (PG) accommodations.It manages records of students and PGs registered under colleges and allows students to raise complaints.The platform also supports PG inspections conducted by authorized committee members.",
+
+    tech: [
+      { icon: php, title: "PHP" },
+      { icon: css, title: "CSS" },
+      { icon: mySql, title: "MYSQL" },
+    ],
   },
 ];

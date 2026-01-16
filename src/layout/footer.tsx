@@ -15,20 +15,30 @@ const Footer = () => {
               </span>
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition">
+              <a
+                href="https://github.com/hemanthnaika"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
                 <Github />
               </a>
-              <a href="#" className="hover:text-primary transition">
+              <a
+                href="https://www.linkedin.com/in/hemanth-naika/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition"
+              >
                 <Linkedin />
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:hemanthnaika12@gmail.com"
                 className="hover:text-primary transition"
               >
                 <Mail />
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:hemanthnaika12@gmail.com"
                 className="group flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition"
               >
                 Get in touch

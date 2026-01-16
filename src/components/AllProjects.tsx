@@ -7,8 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useEffect, useRef } from "react";
 import type { LenisRef } from "lenis/react";
-import { skillConnectLap } from "@/assets";
 import { Badge } from "./ui/badge";
+import { projects } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
@@ -77,9 +77,9 @@ const AllProjects = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 card">
-          {[1, 2, 3, 4, 5, 6].map((project) => (
+          {projects.slice(3).map((project) => (
             <div
-              key={project}
+              key={project.id}
               className="group relative bg-primary/10 rounded-2xl overflow-hidden
                  border border-border shadow-sm hover:shadow-xl
                  transition-all duration-300 "
@@ -87,7 +87,7 @@ const AllProjects = () => {
               {/* Image */}
               <div className="relative h-52 overflow-hidden">
                 <img
-                  src={skillConnectLap}
+                  src={project.img}
                   alt="skill-connect"
                   className="h-full w-full 
                      group-hover:scale-105 transition-transform duration-500"
@@ -101,20 +101,26 @@ const AllProjects = () => {
               <div className="p-5 space-y-4">
                 {/* Title */}
                 <h3 className="text-lg font-semibold tracking-tight">
-                  Project {project}
+                  {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
-                  porro saepe, deleniti modi tenetur.
+                <p className="text-sm text-muted-foreground leading-relaxed ">
+                  {project.description}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
-                  <Badge>React</Badge>
-                  <Badge>Mysql</Badge>
-                  <Badge>Django</Badge>
+                  {project.tech.map((tech) => (
+                    <Badge key={tech.title}>
+                      <img
+                        src={tech.icon}
+                        alt={tech.title}
+                        className="w-3 h-3"
+                      />
+                      <span>{tech.title}</span>
+                    </Badge>
+                  ))}
                 </div>
 
                 {/* Divider */}
@@ -127,8 +133,33 @@ const AllProjects = () => {
                   </span>
 
                   <div className="flex items-center gap-4">
-                    <Github className="w-5 h-5 cursor-pointer hover:text-primary transition" />
-                    <Link className="w-5 h-5 cursor-pointer hover:text-primary transition" />
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-5 h-5 cursor-pointer hover:text-primary transition" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Link className="w-5 h-5 cursor-pointer hover:text-primary transition" />
+                      </a>
+                    )}
+                    {project.demoAdmin && (
+                      <a
+                        href={project.demoAdmin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Link className="w-5 h-5 cursor-pointer hover:text-primary transition" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

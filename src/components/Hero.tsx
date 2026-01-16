@@ -99,7 +99,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="mt-12 flex gap-6 justify-center text-foreground">
             <a
-              href="https://github.com/your-github"
+              href="https://github.com/hemanthnaika"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition"
@@ -108,7 +108,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://linkedin.com/in/your-linkedin"
+              href="https://www.linkedin.com/in/hemanth-naika/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition"
@@ -117,7 +117,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="mailto:your@email.com"
+              href="mailto:hemanthnaika12@gmail.com"
               className="hover:text-primary transition"
             >
               <Mail />

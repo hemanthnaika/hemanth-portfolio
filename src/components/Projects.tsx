@@ -88,7 +88,7 @@ const Projects = () => {
       id="projects"
       className="h-screen w-full p-5 relative transition-colors duration-500 mt-5 md:mt-28"
     >
-      {projects.map((project, index) => (
+      {projects.slice(0, 3).map((project, index) => (
         <div className="absolute inset-0 w-full h-full mt-5">
           <Title
             title="My"
@@ -104,7 +104,7 @@ const Projects = () => {
                   if (el) imagesRef.current[index] = el;
                 }}
                 src={project.img}
-                alt=""
+                alt={project.title}
                 className="max-w-full h-auto rounded-md object-contain shadow-lg"
               />
 
@@ -126,27 +126,23 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
-                {project.admin && (
-                  <div>
-                    <h3 className="font-semibold text-lg">Demo Credentials</h3>
-                    <p className="text-gray-300">
-                      <strong>Username:</strong> {project.admin.username}
-                    </p>
-                    <p className="text-gray-300">
-                      <strong>Password:</strong> {project.admin.password}
-                    </p>
-                    <p className="text-gray-300 text-sm">
-                      {project.admin.description}
-                    </p>
-                  </div>
-                )}
+
                 <div className="flex gap-4 ">
-                  <div>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Github />
-                  </div>
-                  <div>
+                  </a>
+
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Link />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
